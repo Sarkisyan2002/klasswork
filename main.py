@@ -8,106 +8,45 @@ Write your code in this editor and press "Run" button to execute it.
 
 print("Hello World")
 #Задача №1
-x = 10
-y = 3
-z = 13
-if x + y==z:
-    print("Ответ верный:")
+a = input("Введите пароль раз:")
+b = input("Введите пароль второй раз:")
+if a == b:
+    print("Пароль принят")
 else:
-    print("Ответ неверный:")
+    print("Пароль не принят")
     
-#Задача №2
-num = int(input("Какое число я загадал?"))
-if num == 5:
-    print("Угадал!")
+#Задача #2
+c = int(input("Введите целое число:"))
+if c %2 ==0:
+    print("Чётное")
 else:
-    print("Не угадал!")
-    print("Конец игры")
-if num != 6:
-    print("Угадал!")
-else:
-    print("Не угадал!")
-    print("Конец игры")
+    print("Нечётное")
     
-#Задача №3
-rain = int(input("На улице идёт дождь? (Введите 1 если да, 0 если нет):"))
-if rain == 1:
-    print("Пошёл дождь.Возьмите зонт!")
+#Задача #3
+n = int(input("Целое положительное четырёхзначное число:"))
+l = (n // 10 ** 3) % 10
+m = (n // 10 ** 2) % 10
+k = (n // 10 ** 1) % 10
+d = (n // 10 ** 0) % 10
+
+if l + d == m - k:
+    print("ДА")
 else:
-    print("Дождя нет.Можно выйти на улицу без зонта.")
+    print("НЕТ")
     
 #Задача №4
-russian = int(input("Введите количество баллов по русскому языку: "))
-math = int(input("Введите количество баллов по математике: "))
-informatics = int(input("Введите количество баллов по информатике: "))
-total_score = russian + math + informatics
-if total_score >= 270:
-    print("Поздравляю, ты поступил на бюджет!")
+age = int(input("Введите возраст пользователя:"))
+if age >= 18:
+    print("Доступ разрешён")
 else:
-    print("К сожалению, ты не прошёл на бюджет.")
+    print("Доступ запрешён")
     
 #Задача №5
-number = int(input("Введите число: "))
-if number % 2 == 0:
-    print("Это чётное число. Не забудь использовать зубную нить сегодня!")
-else:
-    print("Это нечётное число. Сегодня можно отдохнуть от зубной нити.")
-    
-#Задача №6
-price_1 = float(input("Введите стоимость первого стула: "))
-price_2 = float(input("Введите стоимость второго стула:" ))
-price_3 = float(input("Введите стоимость третьего стула: "))
-total_price = price_1 + price_2 + price_3
-if total_price > 10000:
-    discount = total_price * 0.10
-    final_price = total_price - discount
-else:
-    final_price = total_price
-    print(f"Итоговая сумма чека: {final_price} рублей")
-    
-#Задача №7
-num = int(input("Введите число: "))
-if num < 0:
-    num = -num
-    print("Модуль чила:", num)
-    
-#Задача №8
-kostya_roll = int(input("Кубик Кости: "))
-owner_roll = int(input("Кубик владельца: "))
-if kostya_roll >= owner_roll:
-    difference = kostya_roll - owner_roll
-    print ("Сумма: {difference}")
-    print ("Костя платит")
-else:
-    total = kostya_roll + owner_roll
-print ("Сумма: {total}")
-print ("Владелец платит")
-print ("Игра окончена")
+g = int(input("Введите первое число:"))
+i = int(input("Введите второе число:"))
+j = int(input("Введите третье число:"))
 
-#Задача №9
-input_amount = int(input("Введите сумму, которую хотите снять: "))
-if input_amount % 100 != 0:
-    print("Такую сумму снять невозможно. Обратитесь в другой банкомат.")
+if i == (g + j) /2:
+    print("YES")
 else:
-    print("Вы можете снять указанную сумму.")
-    
-    
-worked_hours = int(input("Введите отработанные часы: "))
-remaining_loan = float(input("Введите остаток по кредиту: "))
-food_expenses = float(input("Введите траты на еду: "))
-salary = worked_hours * 200
-if salary >= remaining_loan + food_expenses:
-    print("Часов хватает. Можно отдохнуть")
-else:
-    print("Часов не хватает. Придётся работать!")
-    
-#Задача №10
-mileage = int(input("Введите пробег: "))
-day = int(input("Введите сегдняшнее число: "))
-sum_digits = sum(int(digit) for digit in str(mileage))
-if sum_digits > day:
-    print("Сброс.")
-    mileage = 0
-else:
-    print("Сегодня не сломался.")
-    print("Пробег:", mileage)
+    print("NO")
