@@ -7,68 +7,115 @@ Write your code in this editor and press "Run" button to execute it.
 '''
 
 print("Hello World")
-#Задача №6
-a = int(input("Введите длину стороны a:"))
-b = int(input("Введите длину стороны b:"))
-c = int(input("Введите длину стороны c:"))
-if a == b == c:
-    print("равносторонний")
-elif (a == b or a == c or b == c) and (a !=b or a !=c or b !=c):
-    print("равнобедренный")
-elif a !=b and a !=c and b !=c:
-    print("разносторонний")
-    
-#Задача №7
-print("Координаты точки: ")
-x = int(input("x = "))
-y = int(input("y = "))
-if x > 0 and y > 0:
-    print("точка в первой четверти")
-elif x < 0 and y > 0:
-    print("точка во второй четверти")
-elif x < 0 and y < 0:
-    print("точка в третьей четверти")
-elif x > 0 and y < 0:
-    print("точка в четвёртой четверти")
-elif x == 0 and y == 0:
-    print("точка в центре координат")
-elif x == 0:
-    print("точка на оси x")
-elif y == 0:
-    print("точка на оси y")
-    
-#Задача №8
-a = int(input("Введите номер месяца a = :"))
-if a == 12 or a == 1 or a == 2:
-    print('winter')
-elif a == 3 or a == 4 or a == 5:
-    print('spring')
-elif a == 6 or a == 7 or a == 8:
-    print('sammer')
-elif a == 9 or a == 10 or a == 11:
-    print('autumn')
+#Задача №1
+number = int(input("Введите число:"))
+if number >= 0:
+    result = number - 10
 else:
-    print("Error")
-    
-#Задача №9
-temperature = int(input("Введите температуру: "))
-if temperature >= 35:
-    print ("На улице очень жарко, рекомендуется под солнцем не стоять и пить побольше воды")
-elif temperature >= 20:
-    print ("На улице тепло, можно надеть шорты и футболку")
-elif temperature >= 10:
-    print ("На улице прохладно, лучше надеть джинсы и толстовку")
+    result = number + 10
+print("Результат:", result)
+
+#Задача №2
+a = int(input("Введите число a:"))
+b = int(input("Введите число b:"))
+c = a * b
+if c < 0:
+    result = c * -2
 else:
-    print ("На улице холодно, надо одеть куртку и шапку")
-    
-#Задача №10
-x = int(input("Введите координату x точки: "))
-y = int(input("Введите координату y точки:"))
-x1 = int(input("Введите координату x1 верхнего левого угла прямоугольника:"))
-y1 = int(input("Введите координату y1 верхнего левого угла прямоугольника:"))
-x2 = int(input("Введите координату x2 нижнего правого угла прямоугольника:"))
-y2 = int(input("Введите координату y2 нижнего правого угла прямоугольника:"))
-if x1 <= x <= x2 and y1 <= y <= y2:
-    print("Точка находится внутри прямоугольника")
+    result = c * 3
+print("Результат:", result)
+
+#Задача №3
+a1 = int(input("Первое число a1:"))
+b1 = int(input("Второе число b1:"))
+sum = a1 + b1
+if sum % 2 == 0:
+    result = a1 * b1
 else:
-    print("Точка находится вне прямоугольника")
+    if b1 !=0:
+        result = a1 / b1
+    else:
+      print("Ошибка: деление на ноль!")
+      result = None
+if result is not None:
+    print("Результат:", result)
+    
+#Задача №4
+m = int(input("Первое число m:"))
+n = int(input("Второе число n:"))
+if m > n:
+    result = m - n
+else:
+    result = n - m
+    print("Результат вычитания:", result)
+    
+#Задача №5
+d = int(input("Введите число d:"))
+if d > 10:
+    result = 1 / 2
+else:
+    result = 1 * 5
+    print("Результат:", result)
+    
+#Задача о книгах
+genre = int(input("Жанр книги:")) 
+rating = int(input("Рейтинг книги (от 1 до 5):"))
+if genre == "Фантастика" and rating > 4:
+    print("Вам следует прочитать эту книгу!")
+else:
+    print("Может быть,эта книга вам не понравиться")
+    
+#Задача о здоровом питании
+calories = int(input("Количество калорий в продукте:"))
+sugar = int(input("Количество сахара в продукте (в граммах):"))
+if calories < 200 or sugar < 5:
+    print("Этот продукт очень низкокалорный, содержит мало сахара.  Рекомендуется покупать.")
+elif calories > 500 and sugar > 10:
+    print("Этот продукт очень высококалорийный, содержит много сахара.  Не рекомендуется покупать.")
+else:
+    print("Этот продукт можно покупать, так как его калорийность и содержание сахара находятся в пределах нормы.")
+    
+#Задача о бюджете
+budget = int(input("Ваш текущий бюджет:"))
+price = int(input("Цена товара:"))
+necessity = int(input("Необходимость товара (да, нет):"))
+if budget >= price:
+    if necessity == "Да":
+        print("Вы можете позволить купить себе этот товар, он вам необходим.")
+    else:
+      print("Вы можете позволить купить себе этот товар, но он не является необходимым.")
+else:
+    if necessity == "Да":
+        print("У вас недостаточно средств для покупки необходимого товара.")
+    else:
+        print("У вас недостаточно средств для покупки этого товара, но он не является необходимым.")
+    
+#Задача о транспорте
+distance = int(input("Расстояние до вашего места назначения в километрах:"))
+time = int(input("Текущее время суток в часах (от 0 до 24):"))
+if distance < 2 and (time < 6 or time < 22):
+    print("Вам следует идти пешком:")
+elif distance < 10 and (time < 6 or time < 22):
+    print("Вам следует использовать велосипед.")
+elif distance < 50:
+    print("Вам следует использовать автомобиль или общественный транспорт.")
+else:
+    print("Вам следует использовать автомобиль.")
+    
+#Задача о погоде
+temperature = int(input("Введите температуру в градусах Цельсия:"))
+weather_condition = input("Введите состояние погоды (солнечно, облачно, дождь):")
+if temperature > 20 and weather_condition == "солнечно":
+    print("Надеть футболку и шорты")
+elif temperature > 20 and weather_condition == "облачно":
+    print("Надеть брюки и футболку")
+elif temperature > 20 and weather_condition == "дождь":
+    print("Надеть лёгкую куртку")
+elif temperature <= 20 and weather_condition == "солнечно":
+    print("Надеть джинсы и рубашку")
+elif temperature <= 20 and weather_condition == "облачно":
+    print("Надеть джинсы и толстовку")
+elif temperature <= 20 and weather_condition == "дождь":
+    print("Надеть джинсы и куртку")
+else:
+    print("Недостаточно данных для выбора одежды")
